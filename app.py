@@ -1,11 +1,9 @@
 from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
-#load_dotenv()
+load_dotenv()
 
-senha = "dias@#$234"
-email = "oseiasdiasfarias@gmail.com"
 
 app = Flask(__name__)
 app.secret_key = 'thicode'
@@ -15,13 +13,9 @@ mail_settings = {
     "MAIL_PORT": 465,
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": email,
-    "MAIL_PASSWORD": senha}
-
-"""
     "MAIL_USERNAME": os.getenv("EMAIL"),
     "MAIL_PASSWORD": os.getenv("SENHA")
-}"""
+}
 
 app.config.update(mail_settings)
 mail = Mail(app)
