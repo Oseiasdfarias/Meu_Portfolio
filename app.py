@@ -1,9 +1,11 @@
 from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message
-from config import email, senha
 #from dotenv import load_dotenv
 import os
 #load_dotenv()
+
+senha = "dias@#$234"
+email = "oseiasdiasfarias@gmail.com"
 
 app = Flask(__name__)
 app.secret_key = 'thicode'
